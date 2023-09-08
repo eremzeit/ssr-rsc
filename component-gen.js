@@ -2,17 +2,8 @@ const fs = require("fs");
 
 const template = `
 export const COMPONENT_NAME: FC<{ prop1: number }> = ({ prop1 }) => {
-    const [myState, setMyState] = useState(0);
+    //const [myState, setMyState] = useState(0);
     return <div STYLE>CHILDREN</div>;
-};
-`;
-const rootTemplate = `
-export const COMPONENT_NAME: FC<{ prop1: number }> = ({ prop1 }) => {
-    const [myState, setMyState] = useState(0);
-    return <div>
-        <button onClick={() => setMyState(myState + 1)}>Click Me</button>
-        CHILDREN
-    </div>;
 };
 `;
 
@@ -92,22 +83,26 @@ function generateFromTemplate(componentBaseName, template, level, namePrefix) {
   ];
 }
 
-const result1 = generateFromTemplate("Hamburger", template, 0);
-const result2 = generateFromTemplate("Salad", template, 0);
-
 // console.log(result1[0].join("\n////\n"), "\n\n///num components " + result1[2]);
 // console.log(result2[0].join("\n////\n"), "\n\n///num components " + result2[2]);
+function generateFile(componentName) {
+  const result = generateFromTemplate(componentName, template, 0);
 
-let fileStr = "import { FC, useState } from 'react';\n";
-fileStr = fileStr + result1[0].join("\n////\n");
-fileStr = fileStr + result2[0].join("\n////\n");
-fileStr = fileStr + "\n\n///num components " + (result1[2] + result2[2]);
+  let fileStr = "import { FC } from 'react';\n";
+  fileStr = fileStr + result[0].join("\n////\n");
+  fileStr = fileStr + "\n\n///num components " + result[2];
 
-const path = "src/components/ComplexComponentTree/complex-component-tree.tsx";
+  const path = `src/components/ComplexComponentTree/${componentName}.tsx`;
 
-fs.writeFile(path, fileStr, (err) => {
-  if (err) {
-    console.error(err);
-  }
-  // file written successfully
-});
+  fs.writeFile(path, fileStr, (err) => {
+    if (err) {
+      console.error(err);
+    }
+    // file written successfully
+  });
+}
+generateFile("Hamburger");
+generateFile("Salad");
+generateFile("BabyCorn");
+generateFile("PeanutButter");
+generateFile("Watermellon");
