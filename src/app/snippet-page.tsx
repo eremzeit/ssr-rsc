@@ -1,5 +1,3 @@
-"use client";
-
 import { Snippet, SnippetProps } from "./api/snippets.client";
 
 import { FC } from "react";
