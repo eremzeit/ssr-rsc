@@ -13,9 +13,9 @@ export interface SnippetProps {
 export const Snippet: FC<SnippetProps> = ({ language, code }) => {
   return (
     <div className="z-10 max-w-5xl w-full items-center text-sm">
-      {/* <SyntaxHighlighter language={language} style={docco}>
+      <SyntaxHighlighter language={language} style={docco}>
         {code}
-      </SyntaxHighlighter> */}
+      </SyntaxHighlighter>
     </div>
   );
 };
