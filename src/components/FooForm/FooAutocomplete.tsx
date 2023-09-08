@@ -3,6 +3,7 @@
 import React, { FC } from "react";
 
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { SubSectionHeader } from "../helpers";
 
 interface Item {
   id: number;
@@ -52,7 +53,7 @@ export const FooAutocomplete: FC<{}> = ({}) => {
       //   onSelect={handleOnSelect}
       //   onFocus={handleOnFocus}
       //   autoFocus
-      //   formatResult={formatResult}
+      formatResult={formatResult}
     />
   );
 };

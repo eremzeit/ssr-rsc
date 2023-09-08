@@ -1,4 +1,7 @@
-import { Snippet, SnippetProps } from "./api/snippets.client";
+import {
+  Snippet,
+  SnippetProps,
+} from "../components/SnippetSection/Snippets.client";
 
 import { FC } from "react";
 import Image from "next/image";

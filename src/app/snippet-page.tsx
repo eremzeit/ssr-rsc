@@ -1,16 +1,17 @@
 import { FC, ReactNode, Suspense } from "react";
 import { Section, SectionContent, SectionHeader } from "@/components/helpers";
-import { Snippet, SnippetProps } from "./api/snippets.client";
+import {
+  Snippet,
+  SnippetProps,
+} from "../components/SnippetSection/Snippets.client";
 import { UserData, loadSnippets, loadUserData } from "@/services";
 
-import { FooForm } from "@/components/FooForm";
+import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
+import { FooForm } from "@/components/FooForm/FooForm";
 import Image from "next/image";
+import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
 import moment from "moment";
-
-// date picker
-// auto-complete
-
 
 export const NavBar: FC<{ user: UserData }> = ({ user }) => {
   return (
@@ -21,7 +22,6 @@ export const NavBar: FC<{ user: UserData }> = ({ user }) => {
         <div className="mr-10 leading-8">Home</div>
         <div className="mr-10 leading-8">About</div>
       </div>
-      {/* <div>{moment().format("MMMM Do YYYY, h:mm:ss a")}</div> */}
       <div className="mr-6 basis-auto">
         Welcome {user.username} ({user.unreadCount})
       </div>
@@ -29,28 +29,9 @@ export const NavBar: FC<{ user: UserData }> = ({ user }) => {
   );
 };
 
-export async function SnippetSection() {
-  const snippets = await loadSnippets();
-  console.log(snippets);
-  return (
-    <Section>
-      <SectionHeader>leet code snippets</SectionHeader>
-      <SectionContent>
-        <div
-          className="flex items-stretch flex-col"
-          style={{ maxHeight: "500px", overflow: "scroll" }}
-        >
-          {snippets.map((s, i) => (
-            <Snippet key={i} snippet={s} />
-          ))}
-        </div>
-      </SectionContent>
-    </Section>
-  );
-}
-
 export default async function SnippetPage() {
   const userData = await loadUserData();
+  const snippets = await loadSnippets();
 
   return (
     <main className="font-mono">
@@ -63,8 +44,9 @@ export default async function SnippetPage() {
           <FooForm />
         </Suspense>
         <Suspense fallback={<p>loading snippets...</p>}>
-          <SnippetSection />
+          <SnippetsSection snippets={snippets} />
         </Suspense>
+        <ComplexComponentTreeSection />
       </div>
     </main>
   );
