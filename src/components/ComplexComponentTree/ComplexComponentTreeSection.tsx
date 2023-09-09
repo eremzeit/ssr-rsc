@@ -8,7 +8,6 @@ import { FC } from "react";
 import { Hamburger } from "./Hamburger";
 import { PeanutButter } from "./PeanutButter";
 import { Salad } from "./Salad";
-import { Water_Brush } from "next/font/google";
 import { Watermellon } from "./Watermellon";
 
 export const ComplexComponentTreeSection: FC<{}> = ({}) => {

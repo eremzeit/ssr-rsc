@@ -2,8 +2,8 @@ const fs = require("fs");
 
 const template = `
 export const COMPONENT_NAME: FC<{ prop1: number }> = ({ prop1 }) => {
-    //const [myState, setMyState] = useState(0);
-    return <div STYLE>CHILDREN</div>;
+    const [myState, setMyState] = useState('smellyfeet');
+    return <div STYLE CLASS_NAME>CHILDREN</div>;
 };
 `;
 
@@ -64,12 +64,14 @@ function generateFromTemplate(componentBaseName, template, level, namePrefix) {
         "STYLE",
         'style={{display: "inline-block", margin: "5px", border: "1px solid #555555", borderRadius: "4px"}}'
       );
+      defStr = defStr.replaceAll("CLASS_NAME", "");
     } else {
       defStr = defStr.replaceAll("CHILDREN", "");
       defStr = defStr.replaceAll(
         "STYLE",
         'style={{height: "10px", width: "10px", display: "block", backgroundColor: "#333", margin: "5px", borderRadius: "4px"}}'
       );
+      defStr = defStr.replaceAll("CLASS_NAME", "");
     }
 
     defStrings = [...defStrings, ...(childDefs || []), defStr];
@@ -83,12 +85,10 @@ function generateFromTemplate(componentBaseName, template, level, namePrefix) {
   ];
 }
 
-// console.log(result1[0].join("\n////\n"), "\n\n///num components " + result1[2]);
-// console.log(result2[0].join("\n////\n"), "\n\n///num components " + result2[2]);
 function generateFile(componentName) {
   const result = generateFromTemplate(componentName, template, 0);
 
-  let fileStr = "import { FC } from 'react';\n";
+  let fileStr = "import { FC, useState } from 'react';\n";
   fileStr = fileStr + result[0].join("\n////\n");
   fileStr = fileStr + "\n\n///num components " + result[2];
 

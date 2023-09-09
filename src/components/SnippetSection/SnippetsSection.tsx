@@ -1,12 +1,13 @@
+import { FC, ReactNode } from "react";
 import { Section, SectionContent, SectionHeader } from "../helpers";
 import { Snippet as SnippetData, loadSnippets } from "@/services";
 
-import { FC } from "react";
-import { Snippet } from "./Snippets.client";
+import { Snippet } from "./Snippets";
 
-export const SnippetsSection: FC<{ snippets: SnippetData[] }> = ({
-  snippets,
-}) => {
+export const SnippetsSection: FC<{
+  // snippets: SnippetData[];
+  snippetList: ReactNode[];
+}> = ({ snippetList }) => {
   return (
     <Section>
       <SectionHeader>
@@ -17,9 +18,10 @@ export const SnippetsSection: FC<{ snippets: SnippetData[] }> = ({
           className="flex items-stretch flex-col"
           style={{ maxHeight: "500px", overflow: "scroll" }}
         >
-          {snippets.map((s, i) => (
+          {snippetList}
+          {/* {snippets.map((s, i) => (
             <Snippet key={i} snippet={s} />
-          ))}
+          ))} */}
         </div>
       </SectionContent>
     </Section>

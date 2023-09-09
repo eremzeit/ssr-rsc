@@ -28,6 +28,7 @@
     "react-day-picker": "^8.8.1",
     "react-dom": "18.2.0",
     "react-search-autocomplete": "^8.5.2",
+    "react-syntax-highlighter": "^15.5.0",
     "sleep-ts": "^0.1.1",
     "tailwindcss": "3.3.3",
     "turnstone": "^2.2.0",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
+    "@next/bundle-analyzer": "^13.4.19",
     "@types/lodash": "^4.14.198",
     "@types/react-highlight": "^0.12.5",
     "@types/react-syntax-highlighter": "^15.5.7"
