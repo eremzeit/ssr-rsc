@@ -5,7 +5,6 @@ import { Snippet as SnippetData, loadSnippets } from "@/services";
 import { Snippet } from "./Snippets";
 
 export const SnippetsSection: FC<{
-  // snippets: SnippetData[];
   snippetList: ReactNode[];
 }> = ({ snippetList }) => {
   return (
@@ -19,9 +18,6 @@ export const SnippetsSection: FC<{
           style={{ maxHeight: "500px", overflow: "scroll" }}
         >
           {snippetList}
-          {/* {snippets.map((s, i) => (
-            <Snippet key={i} snippet={s} />
-          ))} */}
         </div>
       </SectionContent>
     </Section>

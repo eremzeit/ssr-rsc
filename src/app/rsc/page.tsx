@@ -7,6 +7,7 @@ import {
 import { UserData, loadSnippets, loadUserData } from "@/services";
 
 import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
+// import { DynamicFooForm } from "@/components/FooForm/FooFormDynamic";
 import { FooForm } from "@/components/FooForm/FooForm";
 import Image from "next/image";
 import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
@@ -46,6 +47,7 @@ export default async function SnippetPage() {
       >
         <Suspense fallback={<p>loading snippets...</p>}>
           <FooForm />
+          {/* <DynamicFooForm /> */}
         </Suspense>
         <Suspense fallback={<p>loading snippets...</p>}>
           <SnippetsSection

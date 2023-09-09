@@ -10,12 +10,16 @@ import React, { FC, ReactNode } from "react";
 import FooAccordian from "./FooAccordian";
 import { FooAutocomplete } from "./FooAutocomplete";
 import { FooDatePicker } from "./FooDatePicker";
+import MuiCheckbox from "./MuiCheckbox";
+import MuiList from "./MuiList";
+import MuiRating from "./MuiRating";
+import MuiSwitch from "./MuiSwitch";
 
 export const FooForm: FC<{}> = ({}) => {
   return (
     <Section>
       <SectionHeader>
-        killer interactive UI form (which are client components)
+        interactive UI form (which are client components)
       </SectionHeader>
       <SectionContent>
         <ControlWrapper headerText="Date Picker">
@@ -26,6 +30,19 @@ export const FooForm: FC<{}> = ({}) => {
         </ControlWrapper>
         <ControlWrapper headerText="Accordian">
           <FooAccordian />
+        </ControlWrapper>
+
+        <ControlWrapper headerText="MUI Checkbox">
+          <MuiCheckbox />
+        </ControlWrapper>
+        <ControlWrapper headerText="MUI List">
+          <MuiList />
+        </ControlWrapper>
+        <ControlWrapper headerText="MUI Switch">
+          <MuiSwitch />
+        </ControlWrapper>
+        <ControlWrapper headerText="MUI Rating">
+          <MuiRating />
         </ControlWrapper>
       </SectionContent>
     </Section>
