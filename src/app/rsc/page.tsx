@@ -13,7 +13,7 @@ import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
 import moment from "moment";
 
-export const NavBar: FC<{ user: UserData }> = ({ user }) => {
+const NavBar: FC<{ user: UserData }> = ({ user }) => {
   return (
     <header className="bg-gray-200 h-8 flex">
       {" "}

@@ -1,13 +1,6 @@
-import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { Snippet, UserData, loadSnippets, loadUserData } from "@/services";
 
-import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
-import { FC } from "react";
-import { FooForm } from "@/components/FooForm/FooForm";
-import Image from "next/image";
-import { NavBar } from "../rsc/page";
 import { SnippetClientPage } from "./page.client";
-import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
 
 type PageProps = { userData: UserData; snippets: Snippet[] };

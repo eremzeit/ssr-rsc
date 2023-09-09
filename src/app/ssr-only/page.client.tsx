@@ -11,7 +11,7 @@ import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
 
 type PageProps = { userData: UserData; snippets: Snippet[] };
-export const NavBar: FC<{ user: UserData }> = ({ user }) => {
+const NavBar: FC<{ user: UserData }> = ({ user }) => {
   return (
     <header className="bg-gray-200 h-8 flex">
       {" "}
