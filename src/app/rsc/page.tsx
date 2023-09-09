@@ -11,6 +11,7 @@ import { FooForm } from "@/components/FooForm/FooForm";
 import Image from "next/image";
 import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
+import { cookies } from "next/headers";
 import moment from "moment";
 
 const NavBar: FC<{ user: UserData }> = ({ user }) => {
@@ -30,6 +31,9 @@ const NavBar: FC<{ user: UserData }> = ({ user }) => {
 };
 
 export default async function SnippetPage() {
+  const cookieStore = cookies();
+  const theme = cookieStore.get("theme");
+
   const userData = await loadUserData();
   const snippets = await loadSnippets();
 
@@ -51,6 +55,7 @@ export default async function SnippetPage() {
           />
         </Suspense>
         <ComplexComponentTreeSection />
+        {theme?.value}
       </div>
     </main>
   );
