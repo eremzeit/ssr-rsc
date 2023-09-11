@@ -38,7 +38,7 @@ export default async function SnippetPage() {
   const snippets = await loadSnippets();
   const cookieStore = cookies();
 
-  return cookieStore.get("foo") || null ? (
+  return cookieStore.get("foo") || true ? (
     <SnippetClientPage userData={userData} snippets={snippets} />
   ) : null;
   // return <div></div>;
