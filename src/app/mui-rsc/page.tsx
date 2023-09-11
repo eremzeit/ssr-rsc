@@ -9,9 +9,9 @@ import {
 import { UserData, loadSnippets, loadUserData } from "@/services";
 
 import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
-import { FooForm } from "@/components/FooForm/FooForm";
 // import { DynamicFooForm } from "@/components/FooForm/FooFormDynamic";
 import Image from "next/image";
+import { MuiForm } from "@/components/MuiForm/MuiForm";
 import { NavBar } from "@/components/NavBar";
 import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
@@ -33,7 +33,7 @@ export default async function SnippetPage() {
         style={{ maxWidth: 1600, margin: "0px auto", padding: "0px 3rem" }}
       >
         <Suspense fallback={<p>loading snippets...</p>}>
-          <FooForm />
+          <MuiForm />
         </Suspense>
         <Suspense fallback={<p>loading snippets...</p>}>
           <SnippetsSection
