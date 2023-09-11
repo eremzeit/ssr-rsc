@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { Snippet, UserData, loadSnippets, loadUserData } from "@/services";
 
 import { SnippetClientPage } from "./page.client";
