@@ -17,7 +17,7 @@ export const MuiForm: FC<{}> = ({}) => {
   return (
     <Section>
       <SectionHeader>
-        interactive UI form using MUI components(which are client components)
+        UI form using MUI components(which are client components)
       </SectionHeader>
       <SectionContent>
         <ControlWrapper headerText="Date Picker">
