@@ -14,22 +14,25 @@ import { FooAutocomplete } from "./FooAutocomplete";
 import { FooDatePicker } from "./FooDatePicker";
 
 export const FooForm: FC<{}> = ({}) => {
-  return (
-    <Section>
-      <SectionHeader>
-        interactive UI form (which are client components)
-      </SectionHeader>
-      <SectionContent>
-        <ControlWrapper headerText="Date Picker">
-          <FooDatePicker />
-        </ControlWrapper>
-        <ControlWrapper headerText="Auto Complete">
-          <FooAutocomplete />
-        </ControlWrapper>
-        <ControlWrapper headerText="Accordian">
-          <FooAccordian />
-        </ControlWrapper>
-      </SectionContent>
-    </Section>
-  );
+  return "";
 };
+// export const FooForm2: FC<{}> = ({}) => {
+//   return (
+//     <Section>
+//       <SectionHeader>
+//         interactive UI form (which are client components)
+//       </SectionHeader>
+//       <SectionContent>
+//         <ControlWrapper headerText="Date Picker">
+//           <FooDatePicker />
+//         </ControlWrapper>
+//         <ControlWrapper headerText="Auto Complete">
+//           <FooAutocomplete />
+//         </ControlWrapper>
+//         <ControlWrapper headerText="Accordian">
+//           <FooAccordian />
+//         </ControlWrapper>
+//       </SectionContent>
+//     </Section>
+//   );
+// };

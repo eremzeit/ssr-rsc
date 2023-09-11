@@ -4,6 +4,7 @@ import { Snippet, UserData, loadSnippets, loadUserData } from "@/services";
 
 import { SnippetClientPage } from "./page.client";
 import _ from "lodash";
+import { cookies } from "next/headers";
 
 type PageProps = { userData: UserData; snippets: Snippet[] };
 
@@ -35,7 +36,10 @@ type PageProps = { userData: UserData; snippets: Snippet[] };
 export default async function SnippetPage() {
   const userData = await loadUserData();
   const snippets = await loadSnippets();
+  const cookieStore = cookies();
 
-  return <SnippetClientPage userData={userData} snippets={snippets} />;
+  return cookieStore.get("foo") || null ? (
+    <SnippetClientPage userData={userData} snippets={snippets} />
+  ) : null;
   // return <div></div>;
 }
