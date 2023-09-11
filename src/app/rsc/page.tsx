@@ -1,4 +1,4 @@
-export const runtime = "edge";
+//export const runtime = "edge";
 
 import { FC, ReactNode, Suspense } from "react";
 import { Section, SectionContent, SectionHeader } from "@/components/helpers";

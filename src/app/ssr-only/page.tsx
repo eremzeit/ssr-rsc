@@ -1,4 +1,4 @@
-export const runtime = "edge";
+//export const runtime = "edge";
 
 import { Snippet, UserData, loadSnippets, loadUserData } from "@/services";
 
