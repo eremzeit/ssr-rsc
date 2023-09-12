@@ -12,6 +12,7 @@ import React, { FC, ReactNode } from "react";
 import { MuiAccordian } from "./MuiAccordion";
 import { MuiAutocomplete } from "./MuiAutocomplete";
 import { MuiDatePicker } from "./MuiDatePicker";
+import { Pagination } from "@mui/material";
 
 export const MuiForm: FC<{}> = ({}) => {
   return (
@@ -28,6 +29,10 @@ export const MuiForm: FC<{}> = ({}) => {
         </ControlWrapper>
         <ControlWrapper headerText="Accordian">
           <MuiAccordian />
+        </ControlWrapper>
+
+        <ControlWrapper headerText="Pagination">
+          <Pagination count={10} disabled />
         </ControlWrapper>
       </SectionContent>
     </Section>

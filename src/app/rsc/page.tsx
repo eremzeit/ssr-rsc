@@ -8,6 +8,7 @@ import {
 } from "../../components/SnippetSection/Snippets";
 import { UserData, loadSnippets, loadUserData } from "@/services";
 
+import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
 import { ComplexComponentTreeSectionClient } from "@/components/ComplexComponentTree/ComplexComponentTreeSection.client";
 import { FooForm } from "@/components/FooForm/FooForm";
 import { NavBar } from "@/components/NavBar";
@@ -40,7 +41,7 @@ export default async function SnippetPage() {
             ))}
           />
         </Suspense>
-        <ComplexComponentTreeSectionClient />
+        <ComplexComponentTreeSection />
         {theme?.value}
       </div>
     </main>
