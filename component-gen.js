@@ -2,13 +2,12 @@ const fs = require("fs");
 
 const template = `
 export const COMPONENT_NAME: FC<{ prop1: number }> = ({ prop1 }) => {
-    const [myState, setMyState] = useState('smellyfeet');
     return <div STYLE CLASS_NAME>CHILDREN</div>;
 };
 `;
 
 const CHILDREN = 3;
-const LEVELS = 5;
+const LEVELS = 4;
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function letter(i) {
@@ -88,7 +87,7 @@ function generateFromTemplate(componentBaseName, template, level, namePrefix) {
 function generateFile(componentName) {
   const result = generateFromTemplate(componentName, template, 0);
 
-  let fileStr = "import { FC, useState } from 'react';\n";
+  let fileStr = "import { FC } from 'react';\n";
   fileStr = fileStr + result[0].join("\n////\n");
   fileStr = fileStr + "\n\n///num components " + result[2];
 

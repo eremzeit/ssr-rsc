@@ -1,5 +1,3 @@
-"use client";
-
 import { Section, SectionContent, SectionHeader } from "../helpers";
 import { Snippet as SnippetData, loadSnippets } from "@/services";
 

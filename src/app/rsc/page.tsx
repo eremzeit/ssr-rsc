@@ -8,10 +8,8 @@ import {
 } from "../../components/SnippetSection/Snippets";
 import { UserData, loadSnippets, loadUserData } from "@/services";
 
-import { ComplexComponentTreeSection } from "@/components/ComplexComponentTree/ComplexComponentTreeSection";
+import { ComplexComponentTreeSectionClient } from "@/components/ComplexComponentTree/ComplexComponentTreeSection.client";
 import { FooForm } from "@/components/FooForm/FooForm";
-// import { DynamicFooForm } from "@/components/FooForm/FooFormDynamic";
-import Image from "next/image";
 import { NavBar } from "@/components/NavBar";
 import { SnippetsSection } from "@/components/SnippetSection/SnippetsSection";
 import _ from "lodash";
@@ -42,7 +40,7 @@ export default async function SnippetPage() {
             ))}
           />
         </Suspense>
-        <ComplexComponentTreeSection />
+        <ComplexComponentTreeSectionClient />
         {theme?.value}
       </div>
     </main>
