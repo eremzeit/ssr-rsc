@@ -17,7 +17,7 @@ import _ from "lodash";
 import { cookies } from "next/headers";
 import moment from "moment";
 
-export default async function SnippetPage() {
+export async function Page() {
   const cookieStore = cookies();
   const theme = cookieStore.get("theme");
 
@@ -45,5 +45,13 @@ export default async function SnippetPage() {
         </div>
       </Suspense>
     </main>
+  );
+}
+
+export default async function PageWithSuspense() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <Page />
+    </Suspense>
   );
 }

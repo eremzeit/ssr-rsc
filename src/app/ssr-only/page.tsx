@@ -34,7 +34,7 @@ type PageProps = { userData: UserData; snippets: Snippet[] };
 //   );
 // }
 
-export default async function SnippetPage() {
+export async function Page() {
   const userData = await loadUserData();
   const snippets = await loadSnippets();
 
@@ -42,9 +42,17 @@ export default async function SnippetPage() {
   const theme = cookieStore.get("theme");
 
   return (
-    <Suspense fallback={<p>loading...</p>}>
+    <>
       <SnippetClientPage userData={userData} snippets={snippets} />
       {theme?.name}
+    </>
+  );
+}
+
+export default async function PageWithSuspense() {
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <Page />
     </Suspense>
   );
 }
