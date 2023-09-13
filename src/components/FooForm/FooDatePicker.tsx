@@ -1,8 +1,5 @@
 "use client";
 
-import "react-date-picker/dist/DatePicker.css";
-import "react-calendar/dist/Calendar.css";
-
 import DatePicker from "react-date-picker";
 import { SubSectionHeader } from "../helpers";
 import moment from "moment";
