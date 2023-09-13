@@ -17,10 +17,10 @@ export const ComplexComponentTreeSection: FC<{}> = ({}) => {
       </SectionHeader>
       <SectionContent>
         <Hamburger prop1={0} />
-        <Salad prop1={0} />
+        {/* <Salad prop1={0} />
         <BabyCorn prop1={0} />
         <PeanutButter prop1={0} />
-        <Watermellon prop1={0} />
+        <Watermellon prop1={0} /> */}
       </SectionContent>
     </Section>
   );
