@@ -38,10 +38,13 @@ export default async function SnippetPage() {
   const userData = await loadUserData();
   const snippets = await loadSnippets();
 
+  const cookieStore = cookies();
+  const theme = cookieStore.get("theme");
+
   return (
-    <Suspense fallback={<p>loading snippets...</p>}>
+    <Suspense fallback={<p>loading...</p>}>
       <SnippetClientPage userData={userData} snippets={snippets} />
+      {theme?.name}
     </Suspense>
   );
-  // return <div></div>;
 }
