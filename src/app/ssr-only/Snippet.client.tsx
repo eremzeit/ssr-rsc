@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { Snippet as SnippetData } from "@/services";
 import SyntaxHighlighter from "react-syntax-highlighter";

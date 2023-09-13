@@ -1,4 +1,4 @@
-"use client";
+//"use shclient";
 
 import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import {
