@@ -40,12 +40,12 @@ const fakeUserNames = [
 ];
 
 export async function loadUserData(): Promise<UserData> {
-  await sleep(200);
+  await sleep(100);
   return { username: "FooBarUser235", unreadCount: 3 };
 }
 
 export async function loadSnippets(): Promise<Snippet[]> {
-  await sleep(200);
+  await sleep(100);
 
   return _.times(5, (i) => {
     return {

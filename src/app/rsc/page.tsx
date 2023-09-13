@@ -34,13 +34,13 @@ export default async function SnippetPage() {
         <Suspense fallback={<p>loading snippets...</p>}>
           <FooForm />
         </Suspense>
-        {/* <Suspense fallback={<p>loading snippets...</p>}>
+        <Suspense fallback={<p>loading snippets...</p>}>
           <SnippetsSection
             snippetList={snippets.map((s, i) => (
               <Snippet key={i} snippet={s} />
             ))}
           />
-        </Suspense> */}
+        </Suspense>
         <ComplexComponentTreeSection />
         {theme?.value}
       </div>
