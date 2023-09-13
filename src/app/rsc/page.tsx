@@ -33,13 +33,13 @@ export default async function SnippetPage() {
           style={{ maxWidth: 1600, margin: "0px auto", padding: "0px 3rem" }}
         >
           <FooForm />
-          {/* <Suspense fallback={<p>loading snippets...</p>}>
-          <SnippetsSection
-            snippetList={snippets.map((s, i) => (
-              <Snippet key={i} snippet={s} />
-            ))}
-          />
-        </Suspense> */}
+          <Suspense fallback={<p>loading snippets...</p>}>
+            <SnippetsSection
+              snippetList={snippets.map((s, i) => (
+                <Snippet key={i} snippet={s} />
+              ))}
+            />
+          </Suspense>
           <ComplexComponentTreeSection />
           {theme?.value}
         </div>
