@@ -17,7 +17,7 @@ import _ from "lodash";
 import { cookies } from "next/headers";
 import moment from "moment";
 
-export async function Page() {
+async function Page() {
   const cookieStore = cookies();
   const theme = cookieStore.get("theme");
 

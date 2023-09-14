@@ -34,7 +34,7 @@ type PageProps = { userData: UserData; snippets: Snippet[] };
 //   );
 // }
 
-export async function Page() {
+async function Page() {
   const userData = await loadUserData();
   const snippets = await loadSnippets();
 
