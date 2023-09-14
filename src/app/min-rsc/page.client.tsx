@@ -24,12 +24,12 @@ export const SnippetClientPage: FC<PageProps> = (props) => {
       >
         <FooForm />
         <Suspense fallback={<p>Loading snippets...</p>}>
-          {/* <SnippetsSection
+          <SnippetsSection
             snippetList={props.snippets.map((s, i) => (
               <SnippetClient key={i} snippet={s} />
               // <Snippet key={i} snippet={s} />
             ))}
-          /> */}
+          />
         </Suspense>
         <ComplexComponentTreeSectionClient />
       </div>

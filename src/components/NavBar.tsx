@@ -9,13 +9,13 @@ export const NavBar: FC<{ user: UserData }> = ({ user }) => {
       <h1 className="mx-6 font-bold h-full leading-8">FubarUI.xyz</h1>
       <div className="mx-6 flex flex-grow">
         <div className="mr-10 leading-8">
-          <a href={"/ssr-only"}>No RSC</a>
+          <a href={"/min-rsc"}>Minimal RSC</a>
         </div>
-        <div className="mr-10 leading-8">
+        {/* <div className="mr-10 leading-8">
           <a href={"/mui-rsc"}>RSC MUI</a>
-        </div>
+        </div> */}
         <div className="mr-10 leading-8">
-          <a href={"/rsc"}>RSC Ad Hoc</a>
+          <a href={"/rsc"}>Maximal RSC</a>
         </div>
       </div>
       <div className="mr-6 basis-auto">
