@@ -34,11 +34,11 @@ async function Page() {
         >
           <FooForm />
           <Suspense fallback={<p>loading snippets...</p>}>
-            <SnippetsSection
+            {/* <SnippetsSection
               snippetList={snippets.map((s, i) => (
                 <Snippet key={i} snippet={s} />
               ))}
-            />
+            /> */}
           </Suspense>
           <ComplexComponentTreeSection />
           {theme?.value}
